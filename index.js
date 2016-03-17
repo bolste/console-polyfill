@@ -3,7 +3,7 @@
 // Make it safe to do console.log() always.
 (function(global) {
   'use strict';
-  global.console = global.console || {};
+  global.console = global.console || ( typeof window === 'undefined' ? global.println || global.print : || {} );
   var con = global.console;
   var prop, method;
   var empty = {};
